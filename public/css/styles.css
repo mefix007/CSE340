@@ -3,4 +3,32 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  max-width: 100%;
+  top: auto;
+  bottom: auto;
+}
+
+header,
+nav,
+ul, 
+li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.siteName >a,
+#tools >a{
+  text-decoration: none;
+}
+
+.siteName {
+  font-size: 2em;
+}
+nav,
+ul,
+li{
+  letter-spacing: 5px;
+  padding: 5px 20px;
+  margin: 0 15px;
+  justify-content: center;
 }
