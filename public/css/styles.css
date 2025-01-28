@@ -36,6 +36,9 @@ li{
   font-size: large;
   width: 100%;
 }
+nav a {
+  color: bisque;
+}
 h1{
   color: rgb(25, 31, 48);
   font-size: x-large;
