@@ -10,8 +10,9 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
-const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute.js")
+const baseController = require("./controllers/baseController")
+
 
 /* ***********************
  * View engine
@@ -20,17 +21,41 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
 
+
 /* ***********************
  * Routes
  *************************/
-app.use(static)
-app.use("/inv", inventoryRoute)
+app.use(require("./routes/static"));
+//Index route - unit 3, activity
+app.get("/", baseController.buildHome);
+// Inventory routes - unit 3, activity
+app.use("/inv", require("./routes/inventoryRoute"));
 
-//Index route
-// ----app.get("/", function(req, res){
-//   res.render("index", {title: "Home"})
-// })-----
-app.get("/", baseController.buildHome)
+
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+// File Not Found Route - must be last route in list
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, we appear to have lost that page.'});
+});
+
+
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  let nav = await Utilities.getNav();
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`);
+  res.render("errors/error", {
+    title: err.status || 'Server Error',
+    message: err.message,
+    nav
+  });
+});
+
 
 /* ***********************
  * Local Server Information
@@ -39,9 +64,10 @@ app.get("/", baseController.buildHome)
 const port = process.env.PORT
 const host = process.env.HOST
 
+
 /* ***********************
  * Log statement to confirm server operation
  *************************/
 app.listen(port, () => {
-  console.log(`app listening on ${host}:${port}`)
-})
+  console.log(`app listening on ${host}:${port}`);
+});

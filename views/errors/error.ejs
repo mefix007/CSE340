@@ -1,0 +1,6 @@
+<%# eRROR HANDLING ACTIVITY %> 
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else { res.redirect('/') } %>
+<img src="/images/site/funny-404-error-page.webp" alt="Error image" />
+<%- message %>
