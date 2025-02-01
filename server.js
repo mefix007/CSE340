@@ -25,11 +25,11 @@ app.set("layout", "./layouts/layout")
 /* ***********************
  * Routes
  *************************/
-app.use(require("./routes/static"));
+app.use(require("./routes/static"))
 //Index route - unit 3, activity
-app.get("/", baseController.buildHome);
-// Inventory routes - unit 3, activity
-app.use("/inv", require("./routes/inventoryRoute"));
+app.get("/", baseController.buildHome)
+// Inventory routes
+app.use("/inv", inventoryRoute)
 
 
 /* ***********************

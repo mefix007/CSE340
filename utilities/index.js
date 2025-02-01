@@ -1,8 +1,6 @@
 const invModel = require("../models/inventory-model")
 const Util = {}
 
-
-
 /* ************************
  * Constructs the nav HTML unordered list
  ************************** */
@@ -26,6 +24,7 @@ Util.getNav = async function (req, res, next) {
   list += "</ul>"
   return list
 }
+
 
 /* **************************************
 * Build the classification view HTML
@@ -59,5 +58,6 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
 
 module.exports = Util
