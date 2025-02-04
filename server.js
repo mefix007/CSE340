@@ -10,9 +10,9 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
+const Util = require("./utilities/index.js")
 const inventoryRoute = require("./routes/inventoryRoute.js")
 const baseController = require("./controllers/baseController")
-const Util = require("./utilities/index.js")
 
 
 /* ***********************

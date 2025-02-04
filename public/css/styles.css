@@ -91,7 +91,6 @@ h3,p{
   border-radius: 8px;
 
 }
-
 .gridview img {
   width: 8em;
   height: 4em;
@@ -99,7 +98,23 @@ h3,p{
   /*margin: 10px;
   padding: 25px; */
 }
-
+#inv-display{
+  display: grid;
+  color: aquamarine;
+}
+#inv-display img{
+  height: auto;
+  width: auto;
+}
+#inv-display a{
+  color: bisque;
+}
+.namePrice{
+  color: aquamarine;
+}
+.error-image{
+  width: -webkit-fill-available;
+}
 
 /* Larger Views ******************************/
 @media (min-width: 980px) {
@@ -118,7 +133,7 @@ h3,p{
     margin: 20px;
     padding: 70px;
     height: auto;
-    background-image: url('/images/site/small_check.jpg'); /* Adjust the path as needed */
+    background-image: url('/image/site/small_check.jpg'); /* Adjust the path as needed */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -156,5 +171,10 @@ h3,p{
     padding: 30px;
     width: fit-content;
   }
+  .error-image{
+    width: -webkit-fill-available;
+    height: 20em;
+  }
+  
 
 }
