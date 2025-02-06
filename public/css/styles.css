@@ -100,19 +100,21 @@ h3,p{
 }
 #inv-display{
   display: grid;
-  max-width: 100px;
+  max-width: auto;
   /* margin: auto; */
 }
 .car_img{
-  height: 10em;
-  width: 15em;
+  height: auto;
+  width: auto;
   padding: 20px;
-  text-align: center;
+  /* text-align: left; */
   /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1) */
 }
 #inv-display a{
-  color: bisque;
+  color: rgb(246, 225, 164);
   text-decoration: none;
+  font-style: italic;
+  text-align: center;
 }
 .namePrice{
   color: aquamarine;
@@ -187,7 +189,12 @@ h3,p{
     grid-template-columns: repeat(2, 1fr);
     min-width: 95%;
     justify-self: center;
-}
+  }
+  .car_img{
+    height: 10em;
+    width: 15em;
+  }
+
   
   
 
